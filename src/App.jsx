@@ -8,9 +8,11 @@ function App() {
     <BrowserRouter>
       <Navbar />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
+      <main className="container-fluid">
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </main>
 
       {/* <Footer /> */}
     </BrowserRouter>
