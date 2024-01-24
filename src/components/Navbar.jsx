@@ -9,7 +9,7 @@ export default function Navbar() {
       </a>
       <input
         type="text"
-        className="form-control form-control rounded-5 shadow-none w-75 me-2 me-lg-5"
+        className="form-control form-control px-5 rounded-5 shadow-none w-75 me-2 me-lg-5"
         placeholder="Search..."
       />
     </nav>
