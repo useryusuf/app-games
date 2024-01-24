@@ -39,7 +39,7 @@ function Home() {
           <div className="col-12">
             <div className="row mt-5 row-gap-2 row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
               <div className="col">
-                <div class="card cursor-pointer shadow rounded rounded-3">
+                <div class="card cursor-pointer rounded rounded-3">
                   <img src={image} class="card-img-top" alt="" />
                   <div class="card-body">
                     <div className="d-flex justify-content-between">
@@ -52,7 +52,7 @@ function Home() {
                 </div>
               </div>
               <div className="col">
-                <div class="card cursor-pointer shadow rounded rounded-3">
+                <div class="card cursor-pointer rounded rounded-3">
                   <img src={image} class="card-img-top" alt="" />
                   <div class="card-body">
                     <div className="d-flex justify-content-between">
@@ -65,7 +65,7 @@ function Home() {
                 </div>
               </div>
               <div className="col">
-                <div class="card cursor-pointer shadow rounded rounded-3">
+                <div class="card cursor-pointer rounded rounded-3">
                   <img src={image} class="card-img-top" alt="" />
                   <div class="card-body">
                     <div className="d-flex justify-content-between">
@@ -78,7 +78,7 @@ function Home() {
                 </div>
               </div>
               <div className="col">
-                <div class="card cursor-pointer shadow rounded rounded-3">
+                <div class="card cursor-pointer rounded rounded-3">
                   <img src={image} class="card-img-top" alt="" />
                   <div class="card-body">
                     <div className="d-flex justify-content-between">
@@ -91,7 +91,7 @@ function Home() {
                 </div>
               </div>
               <div className="col">
-                <div class="card cursor-pointer shadow rounded rounded-3">
+                <div class="card cursor-pointer rounded rounded-3">
                   <img src={image} class="card-img-top" alt="" />
                   <div class="card-body">
                     <div className="d-flex justify-content-between">

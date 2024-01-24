@@ -1,3 +1,36 @@
 body {
    height: 120vh;
+   background-color: red;
+}
+
+
+.genres-aside {
+   border-top: none !important;
+   border-bottom: none !important;
+   border-radius: 0;
+}
+
+.genres-aside .link {
+   text-decoration: none;
+   color: black;
+}
+
+.genres-aside .link:hover {
+   text-decoration: underline;
+   color: black;
+   font-weight: bolder;
+}
+
+.list-group-item:hover {
+   background-color: #eee;
+}
+
+.activated {
+   font-weight: bolder;
+}
+
+.list-group-genres {
+   outline: none !important;
+   outline-color: grey;
+   padding: 3rem;
 }
