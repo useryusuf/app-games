@@ -3,8 +3,8 @@ import logo from "../assets/logo.webp";
 
 export default function Navbar() {
   return (
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="/">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a className="navbar-brand" href="/">
         <img src={logo} width={"50px"} className="mx-2 mx-lg-4" alt="logo" />
       </a>
       <input

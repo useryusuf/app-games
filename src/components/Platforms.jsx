@@ -8,13 +8,15 @@ const Platforms = () => {
   useEffect(() => {
     client
       .get("/platforms")
-      .then(({ data }) => setPlatforms(data))
+      .then(({ data }) => setPlatforms(data.results))
       .catch(({ message }) => setError(message));
   });
+  // console.log(platforms);
+
   return (
     <>
-      <select class="form-select">
-        <option selected>Platforms</option>
+      <select className="form-select">
+        <option>Platforms</option>
         {platforms &&
           platforms.map((platform) => (
             <option value={platform.id} key={platform.id}>

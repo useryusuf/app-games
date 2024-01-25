@@ -9,7 +9,7 @@ const Genres = () => {
   useEffect(() => {
     client
       .get("/genres")
-      .then(({ data }) => setGenres(data))
+      .then(({ data }) => setGenres(data.results))
       .catch(({ message }) => setError(message));
   });
 
