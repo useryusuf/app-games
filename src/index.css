@@ -3,7 +3,13 @@ body {
    background-color: red;
 }
 
-
+.genre-image {
+   box-sizing: border-box;
+   width: 32px;
+   height: 32px;
+   border-radius: 8px;
+   object-fit: cover;
+}
 .genres-aside {
    border-top: none !important;
    border-bottom: none !important;

@@ -23,10 +23,14 @@ const Genres = () => {
         genres.map((genre) => {
           return (
             <div key={genre.id}>
+              <img
+                src={genre.image_background}
+                className="rounded-1 genre-image m-1"
+                alt={genre.name}
+              />
               <Link to={"/"} className="link">
                 {genre.name}
               </Link>
-              <img src={genre.image_background} width="30px" alt={genre.name} />
             </div>
           );
         })}
