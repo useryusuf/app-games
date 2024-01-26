@@ -1,9 +1,9 @@
 import React from "react";
 import "../../node_modules/bootstrap/dist/css/bootstrap.css";
-import Genres from "./Genres";
-import Platforms from "./Platforms";
-import GamesFilter from "./GamesFilter";
-import Games from "./Games";
+import Genres from "../components/Genres";
+import Platforms from "../components/Platforms";
+import GamesFilter from "../components/GamesFilter";
+import Games from "../components/Games";
 
 function Home() {
   return (

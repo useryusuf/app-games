@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Home from "./components/Home";
-import GameDetail from "./components/GameDetail";
+import Navbar from "./pages/Navbar";
+import Footer from "./pages/Footer";
+import Home from "./pages/Home";
+import GameDetail from "./pages/GameDetail";
 
 function App() {
   return (
