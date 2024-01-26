@@ -2,7 +2,7 @@ import React from "react";
 import "../../node_modules/bootstrap/dist/css/bootstrap.css";
 import Genres from "../components/Genres";
 import Platforms from "../components/Platforms";
-import GamesFilter from "../components/GamesFilter";
+import GamesSort from "../components/GamesSort";
 import Games from "../components/Games";
 
 function Home() {
@@ -18,7 +18,7 @@ function Home() {
                 <Platforms />
               </div>
               <div className="col-3">
-                <GamesFilter />
+                <GamesSort />
               </div>
             </div>
           </div>
