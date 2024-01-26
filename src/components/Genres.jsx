@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import client from "../services/client";
+import genresData from "../data/genres.json";
 
 const Genres = () => {
   const [genres, setGenres] = useState([]);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    client
-      .get("/genres")
-      .then(({ data }) => setGenres(data.results))
-      .catch(({ message }) => setError(message));
-  });
+    // client
+    //   .get("/genres")
+    //   .then(({ data }) => setGenres(data.results))
+    //   .catch(({ message }) => setError(message));
+    setGenres(genresData.results);
+  }, []);
 
   return (
     <div className="col-2 genres-aside  d-none d-lg-block">

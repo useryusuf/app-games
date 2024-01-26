@@ -17,8 +17,12 @@ body {
 }
 
 .genres-aside .link {
+   /* margin-left: 1rem; */
+   margin-left: .2rem;
+   font-size: .8rem;
    text-decoration: none;
    color: black;
+   transition: color 0.1s ease-in, text-decoration 0.1s ease-in, font-weight 0.1s ease-in;
 }
 
 .genres-aside .link:hover {
@@ -26,7 +30,6 @@ body {
    color: black;
    font-weight: bolder;
 }
-
 .list-group-item:hover {
    background-color: #eee;
 }
