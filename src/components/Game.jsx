@@ -18,7 +18,6 @@ const Game = ({ data }) => {
     pc: FaWindows,
     playstation: FaPlaystation,
     playstation4: FaPlaystation,
-
     xbox: FaXbox,
     xbox360: FaXbox,
     nintendo: SiNintendo,
@@ -40,7 +39,7 @@ const Game = ({ data }) => {
     >
       <img src={data.background_image} className="card-img-top" alt="" />
       <div className="card-body">
-        <div className="d-flex justify-content-between">
+        <div className="d-flex justify-content-between mb-3">
           <div className="platforms">
             {data.platforms && data.platforms.map(mapPlatforms)}
           </div>

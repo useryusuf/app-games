@@ -47,3 +47,7 @@ body {
 .cursor-pointer{
    cursor: pointer;
 }
+
+.platforms svg {
+   margin-left: .5rem
+}
