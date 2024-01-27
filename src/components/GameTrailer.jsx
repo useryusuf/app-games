@@ -15,11 +15,11 @@ const GameTrailer = () => {
 
   return first ? (
     <>
-      <h2>{first.name}</h2>
+      <h2 className="my-3">{first.name}</h2>
       <video
         src={first.data[480]}
         poster={first.preview}
-        width="80%"
+        width="100%"
         controls
       />
     </>

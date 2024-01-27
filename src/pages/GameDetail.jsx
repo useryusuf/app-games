@@ -20,11 +20,17 @@ const GameDetail = () => {
   }, []);
   return (
     <div className="container">
-      {error && <p className="text-danger m-2">{error}</p>}
-      <h1 className="fw-bold m-3 mx-0">{game.name}</h1>
-      <ExpandableText>{game.description_raw}</ExpandableText>
-      <GameTrailer />
-      <GameScreenshots />
+      <div className=" row row-cols-1 row-cols-md-2">
+        {error && <p className="text-danger m-2">{error}</p>}
+        <div className="col">
+          <h1 className="fw-bold m-3 mx-0 mt-4">{game.name}</h1>
+          <ExpandableText>{game.description_raw}</ExpandableText>
+        </div>
+        <div className="col  mt-4">
+          <GameTrailer />
+          <GameScreenshots />
+        </div>
+      </div>
     </div>
   );
 };

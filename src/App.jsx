@@ -9,7 +9,7 @@ function App() {
     <BrowserRouter>
       <Navbar />
 
-      <main className="container-fluid">
+      <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/game/:id" element={<GameDetail />} />

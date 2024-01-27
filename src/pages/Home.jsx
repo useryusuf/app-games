@@ -7,23 +7,25 @@ import Games from "../components/Games";
 
 function Home() {
   return (
-    <div className="row">
-      <Genres />
-      <div className="col">
-        <div className="row">
-          <h1 className="fw-bolder my-3">Games</h1>
-          <div className="col-12">
-            <div className="row">
-              <div className="col-3">
-                <Platforms />
-              </div>
-              <div className="col-3">
-                <GamesSort />
+    <div className="container-fluid">
+      <div className="row">
+        <Genres />
+        <div className="col">
+          <div className="row">
+            <h1 className="fw-bolder my-3">Games</h1>
+            <div className="col-12">
+              <div className="row">
+                <div className="col-3">
+                  <Platforms />
+                </div>
+                <div className="col-3">
+                  <GamesSort />
+                </div>
               </div>
             </div>
-          </div>
-          <div className="col-12">
-            <Games />
+            <div className="col-12">
+              <Games />
+            </div>
           </div>
         </div>
       </div>

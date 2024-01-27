@@ -12,7 +12,7 @@ const GameScreenshots = () => {
     setScreenshots(screenshotsData.results);
   }, []);
   return (
-    <div className="row mt-5 g-2 row-cols-1 row-cols-sm-2">
+    <div className="row mt-5 g-2 row-cols-1 row-cols-lg-2">
       {screenshots &&
         screenshots.map((screenshot) => {
           return (
