@@ -4,6 +4,7 @@ import gameData from "../data/game.json";
 import ExpandableText from "../components/ExpandedText";
 import GameTrailer from "../components/GameTrailer";
 import GameScreenshots from "./GameScreenshots";
+import GameMeta from "./GameMeta";
 
 const GameDetail = () => {
   const { id } = useParams();
@@ -28,6 +29,11 @@ const GameDetail = () => {
         </div>
         <div className="col  mt-4">
           <GameTrailer />
+        </div>
+        <div className="col  mt-4">
+          <GameMeta />
+        </div>
+        <div className="col mt-4">
           <GameScreenshots />
         </div>
       </div>
