@@ -1,19 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
-import genresData from "../data/genres.json";
+import client from "../services/client";
+// import genresData from "../data/genres.json";
 
-const Genres = ({ onGenreSelect }) => {
+const Genres = ({ onGenreSelect, onError }) => {
   const [genres, setGenres] = useState([]);
-  const [error, setError] = useState("");
   const [currentGenre, setCurrentGenre] = useState(null);
 
   useEffect(() => {
-    // axios
-    //   .get("/genres")
-    //   .then(({ data }) => setGenres(data.results))
-    //   .catch(({ message }) => setError(message));
-    setGenres(genresData.results);
+    client
+      .get("/genres")
+      .then(({ data }) => setGenres(data.results))
+      .catch(({ message }) => onError(message));
   }, []);
 
   const handleGenreSelect = (genreId) => {
@@ -25,8 +22,6 @@ const Genres = ({ onGenreSelect }) => {
     <div className="col-2 genres-aside d-none d-lg-block">
       <h3 className="fw-bolder m-4">Genres</h3>
       <hr />
-      {error && <p className="text-danger m-2">{error}</p>}
-
       {genres &&
         genres.map((genre) => {
           return (
@@ -47,7 +42,6 @@ const Genres = ({ onGenreSelect }) => {
             </div>
           );
         })}
-      <hr />
     </div>
   );
 };
