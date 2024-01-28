@@ -1,9 +1,21 @@
-import React from "react";
 import Game from "./Game";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import client from "../services/client";
+export default function Games({ selectedGenreId, onError }) {
+  const [games, setGames] = useState([]);
 
-const Games = ({ games }) => {
+  console.log(games);
+  useEffect(() => {
+    const params = selectedGenreId
+      ? { params: { genres: selectedGenreId } }
+      : null;
+    client
+      .get("/games", params)
+      .then(({ data }) => setGames(data.results))
+      .catch(({ message }) => onError(message));
+    // setGames(gamesData.results);
+  }, [selectedGenreId]);
+
   return (
     <div className="row mt-5 row-gap-4 row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
       {games &&
@@ -14,6 +26,4 @@ const Games = ({ games }) => {
         ))}
     </div>
   );
-};
-
-export default Games;
+}

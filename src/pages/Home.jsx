@@ -1,27 +1,20 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "../../node_modules/bootstrap/dist/css/bootstrap.css";
 import Genres from "../components/Genres";
 import Platforms from "../components/Platforms";
 import GamesSort from "../components/GamesSort";
 import Games from "../components/Games";
-import gamesData from "../data/games.json";
+import { SiH3 } from "react-icons/si";
 
 function Home() {
-  const [games, setGames] = useState([]);
-  const [selectedGenre, setSelectedGenre] = useState("");
-  const [error, setError] = useState("");
+  const [selectedGenreId, setSelectedGenreId] = useState(null);
+  const [errors, setErrors] = useState([]);
 
-  useEffect(() => {
-    // client
-    //   .get("/games")
-    //   .then(({ data }) => setGames(data.results))
-    //   .catch(({ message }) => setError(message));
-    setGames(gamesData.results);
-  }, []);
-  const handeGenreSelect = (genre) => console.log(genre);
+  const handeGenreSelect = (genre_id) => setSelectedGenreId(genre_id);
 
   return (
     <div className="container-fluid">
+      {errors && <div className="alert alert-danger w-50 m-4">{errors[0]}</div>}
       <div className="row">
         <Genres onGenreSelect={handeGenreSelect} />
         <div className="col">
@@ -38,7 +31,10 @@ function Home() {
               </div>
             </div>
             <div className="col-12">
-              <Games games={games} />
+              <Games
+                selectedGenreId={selectedGenreId}
+                onError={(m) => setErrors([...errors, m])}
+              />
             </div>
           </div>
         </div>

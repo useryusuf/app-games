@@ -46,7 +46,6 @@ const Game = ({ data }) => {
           <div className="score my-1 badge bg-success">92</div>
         </div>
         <h3 className="card-text fw-bold">{data.name}</h3>
-        <div className="emoji">M</div>
       </div>
     </div>
   );
