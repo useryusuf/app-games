@@ -30,7 +30,7 @@ const Game = ({ data }) => {
 
   const mapPlatforms = ({ platform }) => {
     const IconComponent = iconMap[platform.slug];
-    if (IconComponent) return <IconComponent />;
+    if (IconComponent) return <IconComponent key={platform.id} />;
   };
   return (
     <div

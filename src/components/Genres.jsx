@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import client from "../services/client";
 import genresData from "../data/genres.json";
 
-const Genres = () => {
+const Genres = ({ onGenreSelect }) => {
   const [genres, setGenres] = useState([]);
   const [error, setError] = useState("");
 
@@ -30,9 +30,12 @@ const Genres = () => {
                 className="rounded-1 genre-image m-1"
                 alt={genre.name}
               />
-              <Link to={"/"} className="link">
+              <p
+                onClick={(e) => onGenreSelect(e.target.value)}
+                className="link activated"
+              >
                 {genre.name}
-              </Link>
+              </p>
             </div>
           );
         })}

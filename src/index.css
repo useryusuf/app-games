@@ -1,6 +1,5 @@
 body {
    height: 120vh;
-   background-color: red;
 }
 
 .genre-image {
@@ -18,6 +17,8 @@ body {
 
 .genres-aside .link {
    /* margin-left: 1rem; */
+   display: inline;
+   cursor: pointer;
    margin-left: .2rem;
    font-size: .8rem;
    text-decoration: none;
@@ -28,7 +29,6 @@ body {
 .genres-aside .link:hover {
    text-decoration: underline;
    color: black;
-   font-weight: bolder;
 }
 .list-group-item:hover {
    background-color: #eee;

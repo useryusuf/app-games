@@ -16,7 +16,7 @@ const GameScreenshots = () => {
       {screenshots &&
         screenshots.map((screenshot) => {
           return (
-            <div className="col">
+            <div key={screenshot.id} className="col">
               <img
                 src={screenshot.image}
                 width="100%"
