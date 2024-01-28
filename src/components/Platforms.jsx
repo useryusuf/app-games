@@ -1,16 +1,15 @@
 import { useState, useEffect } from "react";
 import client from "../services/client";
-import platformsData from "../data/platforms.json";
+// import platformsData from "../data/platforms.json";
 
 const Platforms = ({ onPlatformSelect, onError }) => {
   const [platforms, setPlatforms] = useState([]);
 
   useEffect(() => {
-    // client
-    //   .get("/platforms")
-    //   .then(({ data }) => setPlatforms(data.results))
-    //   .catch(({ message }) => onError(message));
-    setPlatforms(platformsData.results);
+    client
+      .get("/platforms")
+      .then(({ data }) => setPlatforms(data.results))
+      .catch(({ message }) => onError(message));
   }, []);
 
   return (

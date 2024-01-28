@@ -18,7 +18,6 @@ function Home() {
 
   return (
     <div className="container-fluid">
-      {errors && <div className="alert alert-danger w-50 m-4">{errors[0]}</div>}
       <div className="row">
         <Genres
           onGenreSelect={handleGenreSelect}
@@ -41,6 +40,10 @@ function Home() {
               </div>
             </div>
             <div className="col-12">
+              {errors[0] && (
+                <div className="alert alert-danger w-50 m-4">{errors[0]}</div>
+              )}
+
               <Games
                 selectedGenreId={selectedGenreId}
                 selectedPlatformId={selectedPlatformId}
