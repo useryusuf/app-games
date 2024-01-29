@@ -5,7 +5,7 @@ import Platforms from "../components/Platforms";
 import GamesSort from "../components/GamesSort";
 import Games from "../components/Games";
 
-function Home() {
+function Home({ searchTerm }) {
   //for css class
   const [selectedGenreId, setSelectedGenreId] = useState(null);
   const [selectedPlatformId, setSelectedPlatformId] = useState(null);
@@ -47,6 +47,7 @@ function Home() {
               <Games
                 selectedGenreId={selectedGenreId}
                 selectedPlatformId={selectedPlatformId}
+                searchTerm={searchTerm}
                 onError={(m) => setErrors([...errors, m])}
               />
             </div>

@@ -5,6 +5,7 @@ import client from "../services/client";
 export default function Games({
   selectedPlatformId,
   selectedGenreId,
+  searchTerm,
   onError,
 }) {
   const [games, setGames] = useState([]);
@@ -16,11 +17,13 @@ export default function Games({
 
     if (selectedGenreId) params.genres = selectedGenreId;
 
+    if (searchTerm) params.search = searchTerm;
+
     client
       .get("/games", { params })
       .then(({ data }) => setGames(data.results))
       .catch(({ message }) => onError(message));
-  }, [selectedPlatformId, selectedGenreId]);
+  }, [selectedPlatformId, selectedGenreId, searchTerm]);
 
   return (
     <div className="row mt-5 row-gap-4 row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
