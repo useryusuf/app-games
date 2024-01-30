@@ -10,10 +10,9 @@ export default function Games({ gameQuery, onError }) {
 
     if (gameQuery.selectedPlatformId)
       params.platforms = gameQuery.selectedPlatformId;
-
     if (gameQuery.selectedGenreId) params.genres = gameQuery.selectedGenreId;
-
     if (gameQuery.searchTerm) params.search = gameQuery.searchTerm;
+    if (gameQuery.ordering) params.ordering = gameQuery.ordering;
 
     client
       .get("/games", { params })

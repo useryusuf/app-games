@@ -7,11 +7,7 @@ import Games from "../components/Games";
 import Navbar from "./Navbar";
 
 function Home() {
-  const [gameQuery, setGameQuery] = useState({
-    selectedGenreId: null,
-    selectedPlatformId: null,
-    searchTerm: null,
-  });
+  const [gameQuery, setGameQuery] = useState({});
   const [errors, setErrors] = useState([]);
 
   const handleGenreSelect = (genre_id) =>
@@ -20,6 +16,8 @@ function Home() {
     setGameQuery({ ...gameQuery, searchTerm: term });
   const handlePlatformSelect = (platform_id) =>
     setGameQuery({ ...gameQuery, selectedPlatformId: platform_id });
+  const handleOrderSelect = (order) =>
+    setGameQuery({ ...gameQuery, ordering: order });
 
   return (
     <>
@@ -42,7 +40,10 @@ function Home() {
                     />
                   </div>
                   <div className="col-3">
-                    <GamesSort />
+                    <GamesSort
+                      onSelectSortOrder={handleOrderSelect}
+                      sortOrder={gameQuery.ordering}
+                    />
                   </div>
                 </div>
               </div>
