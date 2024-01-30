@@ -2,28 +2,24 @@ import Game from "./Game";
 import { useState, useEffect } from "react";
 import client from "../services/client";
 
-export default function Games({
-  selectedPlatformId,
-  selectedGenreId,
-  searchTerm,
-  onError,
-}) {
+export default function Games({ gameQuery, onError }) {
   const [games, setGames] = useState([]);
 
   useEffect(() => {
     const params = {};
 
-    if (selectedPlatformId) params.platforms = selectedPlatformId;
+    if (gameQuery.selectedPlatformId)
+      params.platforms = gameQuery.selectedPlatformId;
 
-    if (selectedGenreId) params.genres = selectedGenreId;
+    if (gameQuery.selectedGenreId) params.genres = gameQuery.selectedGenreId;
 
-    if (searchTerm) params.search = searchTerm;
+    if (gameQuery.searchTerm) params.search = gameQuery.searchTerm;
 
     client
       .get("/games", { params })
       .then(({ data }) => setGames(data.results))
       .catch(({ message }) => onError(message));
-  }, [selectedPlatformId, selectedGenreId, searchTerm]);
+  }, [gameQuery]);
 
   return (
     <div className="row mt-5 row-gap-4 row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">

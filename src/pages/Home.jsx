@@ -7,14 +7,19 @@ import Games from "../components/Games";
 
 function Home({ searchTerm }) {
   //for css class
-  const [selectedGenreId, setSelectedGenreId] = useState(null);
-  const [selectedPlatformId, setSelectedPlatformId] = useState(null);
+  const [gameQuery, setGameQuery] = useState({
+    selectedGenreId: null,
+    selectedPlatformId: null,
+    searchTerm,
+  });
+
+  console.log(gameQuery.searchTerm);
   const [errors, setErrors] = useState([]);
 
-  const handleGenreSelect = (genre_id) => setSelectedGenreId(genre_id);
-
+  const handleGenreSelect = (genre_id) =>
+    setGameQuery({ ...gameQuery, selectedGenreId: genre_id });
   const handlePlatformSelect = (platform_id) =>
-    setSelectedPlatformId(platform_id);
+    setGameQuery({ ...gameQuery, selectedPlatformId: platform_id });
 
   return (
     <div className="container-fluid">
@@ -45,9 +50,7 @@ function Home({ searchTerm }) {
               )}
 
               <Games
-                selectedGenreId={selectedGenreId}
-                selectedPlatformId={selectedPlatformId}
-                searchTerm={searchTerm}
+                gameQuery={gameQuery}
                 onError={(m) => setErrors([...errors, m])}
               />
             </div>
