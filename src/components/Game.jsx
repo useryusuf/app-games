@@ -10,6 +10,7 @@ import { MdPhoneIphone } from "react-icons/md";
 import { SiNintendo } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
+import noImage from "../assets/no-image-placeholder.webp";
 
 const Game = ({ data }) => {
   const navigate = useNavigate();
@@ -37,7 +38,11 @@ const Game = ({ data }) => {
       className="card rounded rounded-3 cursor-pointer"
       onClick={() => navigate(`/game/${data.id}`)}
     >
-      <img src={data.background_image} className="card-img-top" alt="" />
+      <img
+        src={data.background_image ? data.background_image : noImage}
+        className="card-img-top"
+        alt=""
+      />
       <div className="card-body">
         <div className="d-flex justify-content-between mb-3">
           <div className="platforms">
