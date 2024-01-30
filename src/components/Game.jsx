@@ -11,6 +11,7 @@ import { SiNintendo } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import noImage from "../assets/no-image-placeholder.webp";
+import Emoji from "./Emoji";
 
 const Game = ({ data }) => {
   const navigate = useNavigate();
@@ -51,6 +52,7 @@ const Game = ({ data }) => {
           <div className="score my-1 badge bg-success">92</div>
         </div>
         <h3 className="card-text fw-bold">{data.name}</h3>
+        <Emoji rating={data.rating_top} />
       </div>
     </div>
   );
