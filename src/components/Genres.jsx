@@ -13,9 +13,9 @@ const Genres = ({ onGenreSelect, onError }) => {
       .catch(({ message }) => onError(message));
   }, []);
 
-  const handleGenreSelect = (genreId) => {
-    onGenreSelect(genreId);
-    setCurrentGenre(genreId);
+  const handleGenreSelect = (genre) => {
+    onGenreSelect(genre);
+    setCurrentGenre(genre);
   };
 
   return (
@@ -32,7 +32,7 @@ const Genres = ({ onGenreSelect, onError }) => {
                 alt={genre.name}
               />
               <p
-                onClick={() => handleGenreSelect(genre.id)}
+                onClick={() => handleGenreSelect(genre)}
                 className={`link ${
                   currentGenre === genre.id ? "activated" : ""
                 }`}

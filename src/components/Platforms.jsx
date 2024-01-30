@@ -16,7 +16,12 @@ const Platforms = ({ onPlatformSelect, onError }) => {
     <>
       <select
         className="form-select"
-        onChange={(e) => onPlatformSelect(+e.target.value)}
+        onChange={(e) => {
+          onPlatformSelect(
+            platforms &&
+              platforms.filter((platform) => platform.id === +e.target.value)[0]
+          );
+        }}
       >
         <option>Platforms</option>
         {platforms &&

@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Footer from "./pages/Footer";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import GameDetail from "./pages/GameDetail";
 import { useState } from "react";

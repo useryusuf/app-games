@@ -8,12 +8,14 @@ export default function Games({ gameQuery, onError }) {
   useEffect(() => {
     const params = {};
 
-    if (gameQuery.selectedPlatformId)
-      params.platforms = gameQuery.selectedPlatformId;
-    if (gameQuery.selectedGenreId) params.genres = gameQuery.selectedGenreId;
-    if (gameQuery.searchTerm) params.search = gameQuery.searchTerm;
+    // console.log("b-", gameQuery);
+
+    if (gameQuery.platforms) params.platforms = gameQuery.platforms.id;
+    if (gameQuery.genres) params.genres = gameQuery.genres.id;
+    if (gameQuery.search) params.search = gameQuery.search;
     if (gameQuery.ordering) params.ordering = gameQuery.ordering;
 
+    console.log(params);
     client
       .get("/games", { params })
       .then(({ data }) => setGames(data.results))

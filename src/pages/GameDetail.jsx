@@ -3,9 +3,9 @@ import { useParams } from "react-router-dom";
 import gameData from "../data/game.json";
 import ExpandableText from "../components/ExpandedText";
 import GameTrailer from "../components/GameTrailer";
-import GameScreenshots from "./GameScreenshots";
-import GameMeta from "./GameMeta";
-import Navbar from "./Navbar";
+import GameScreenshots from "../components/GameScreenshots";
+import GameMeta from "../components/GameMeta";
+import Navbar from "../components/Navbar";
 import client from "../services/client";
 
 const GameDetail = () => {

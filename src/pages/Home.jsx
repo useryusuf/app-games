@@ -4,18 +4,19 @@ import Genres from "../components/Genres";
 import Platforms from "../components/Platforms";
 import GamesSort from "../components/GamesSort";
 import Games from "../components/Games";
-import Navbar from "./Navbar";
+import Navbar from "../components/Navbar";
+import GamesHeading from "../components/GamesHeading";
 
 function Home() {
   const [gameQuery, setGameQuery] = useState({});
   const [errors, setErrors] = useState([]);
 
-  const handleGenreSelect = (genre_id) =>
-    setGameQuery({ ...gameQuery, selectedGenreId: genre_id });
-  const handleSearch = (term) =>
-    setGameQuery({ ...gameQuery, searchTerm: term });
-  const handlePlatformSelect = (platform_id) =>
-    setGameQuery({ ...gameQuery, selectedPlatformId: platform_id });
+  const handleGenreSelect = (genre) =>
+    setGameQuery({ ...gameQuery, genres: genre });
+  const handleSearch = (search) => setGameQuery({ ...gameQuery, search });
+  const handlePlatformSelect = (platform) => {
+    setGameQuery({ ...gameQuery, platforms: platform });
+  };
   const handleOrderSelect = (order) =>
     setGameQuery({ ...gameQuery, ordering: order });
 
@@ -30,7 +31,10 @@ function Home() {
           />
           <div className="col">
             <div className="row">
-              <h1 className="fw-bolder my-3">Games</h1>
+              <GamesHeading
+                selectedGenre={gameQuery.genres}
+                selectedPlatform={gameQuery.platforms}
+              />
               <div className="col-12">
                 <div className="row">
                   <div className="col-3">
