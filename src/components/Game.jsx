@@ -37,7 +37,7 @@ const Game = ({ data }) => {
   return (
     <div
       className="card rounded rounded-3 cursor-pointer"
-      onClick={() => navigate(`/game/${data.id}`)}
+      onClick={() => navigate(`/game/${data.slug}`)}
     >
       <img
         src={data.background_image ? data.background_image : noImage}

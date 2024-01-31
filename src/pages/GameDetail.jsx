@@ -8,13 +8,13 @@ import Navbar from "../components/Navbar";
 import client from "../services/client";
 
 const GameDetail = () => {
-  const { id } = useParams();
+  const { slug } = useParams();
   const [game, setGame] = useState({});
   const [errors, setErrors] = useState("");
 
   useEffect(() => {
     client
-      .get("/games/" + id)
+      .get("/games/" + slug)
       .then(({ data }) => setGame(data))
       .catch(({ message }) => setErrors(message));
   }, []);
