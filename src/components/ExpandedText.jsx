@@ -11,16 +11,18 @@ const ExpandableText = ({ children }) => {
   const summary = expanded ? children : children.substring(0, limit) + "...";
 
   return (
-    <p className="object-fit-contain">
-      {summary}
-      <div
-        className="btn btn-secondary btn-sm mx-4 mx-md-0"
-        onClick={() => setExpanded(!expanded)}
-      >
-        {expanded ? "Less" : "More"}
-      </div>
+    <>
+      <p className="object-fit-contain">
+        {summary}
+        <div
+          className="btn btn-secondary btn-sm mx-4 mx-md-0"
+          onClick={() => setExpanded(!expanded)}
+        >
+          {expanded ? "Less" : "More"}
+        </div>
+      </p>
       <hr />
-    </p>
+    </>
   );
 };
 

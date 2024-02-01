@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from "react";
-import moviesData from "../data/movies.json";
+import client from "../services/client";
 
-const GameTrailer = () => {
+const GameTrailer = ({ game_id, onError }) => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    // client
-    //   .get("/games")
-    //   .then(({ data }) => setGames(data.results))
-    //   .catch(({ message }) => setError(message));
-    setMovies(moviesData.results);
+    client
+      .get("/games/" + game_id + "/movies")
+      .then(({ data }) => setMovies(data.results))
+      .catch(({ message }) => onError(message)); // Corrected to onError
   }, []);
+
   const first = movies[0];
 
   return first ? (
-    <>
+    <div className="col  mt-4">
       <h2 className="my-3">{first.name}</h2>
       <video
         src={first.data[480]}
@@ -22,7 +22,7 @@ const GameTrailer = () => {
         width="100%"
         controls
       />
-    </>
+    </div>
   ) : null;
 };
 

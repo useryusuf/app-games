@@ -1,15 +1,14 @@
 import { useState, useEffect } from "react";
-import screenshotsData from "../data/screenshots.json";
+import client from "../services/client";
 
-const GameScreenshots = () => {
+const GameScreenshots = ({ game_id, onError }) => {
   const [screenshots, setScreenshots] = useState([]);
 
   useEffect(() => {
-    // client
-    //   .get("/games/id/screenshots")
-    //   .then(({ data }) => setGames(data.results))
-    //   .catch(({ message }) => setError(message));
-    setScreenshots(screenshotsData.results);
+    client
+      .get("/games/" + game_id + "/screenshots")
+      .then(({ data }) => setScreenshots(data.results))
+      .catch(({ message }) => onError(message));
   }, []);
   return (
     <div className="row mt-5 g-2 row-cols-1 row-cols-lg-2">
