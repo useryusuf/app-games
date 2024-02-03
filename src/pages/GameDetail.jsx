@@ -6,8 +6,11 @@ import GameScreenshots from "../components/GameScreenshots";
 import GameMeta from "../components/GameMeta";
 import Navbar from "../components/Navbar";
 import client from "../services/client";
+import { useNavigate } from "react-router-dom";
 
-const GameDetail = () => {
+const GameDetail = ({ onSearch }) => {
+  const navigate = useNavigate();
+
   const { slug } = useParams();
   const [game, setGame] = useState({});
   const [errors, setErrors] = useState([]);
@@ -19,7 +22,10 @@ const GameDetail = () => {
       .catch(({ message }) => setErrors([...errors, message]));
   }, []);
 
-  const handleSearch = (term) => console.log(term);
+  const handleSearch = (term) => {
+    onSearch(term);
+    navigate("/");
+  };
   const handleError = (error) => setErrors([...errors, error]);
   return (
     <>

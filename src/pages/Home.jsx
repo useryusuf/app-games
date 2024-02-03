@@ -7,8 +7,8 @@ import Games from "../components/Games";
 import Navbar from "../components/Navbar";
 import GamesHeading from "../components/GamesHeading";
 
-function Home() {
-  const [gameQuery, setGameQuery] = useState({});
+function Home({ term }) {
+  const [gameQuery, setGameQuery] = useState({ search: term });
   const [errors, setErrors] = useState([]);
 
   const handleGenreSelect = (genre) =>

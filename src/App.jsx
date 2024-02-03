@@ -5,12 +5,16 @@ import GameDetail from "./pages/GameDetail";
 import { useState } from "react";
 
 function App() {
+  const [term, setTerm] = useState("");
   return (
     <BrowserRouter>
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/game/:slug" element={<GameDetail />} />
+          <Route path="/" element={<Home term={term} />} />
+          <Route
+            path="/game/:slug"
+            element={<GameDetail onSearch={(term) => setTerm(term)} />}
+          />
         </Routes>
       </main>
 
