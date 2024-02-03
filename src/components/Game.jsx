@@ -35,16 +35,16 @@ const Game = ({ data }) => {
     if (IconComponent) return <IconComponent key={platform.id} />;
   };
   return (
-    <div
-      className="card rounded rounded-3 cursor-pointer"
-      onClick={() => navigate(`/game/${data.slug}`)}
-    >
+    <div className="card rounded rounded-3">
       <img
         src={data.background_image ? data.background_image : noImage}
         className="card-img-top"
         alt=""
       />
-      <div className="card-body">
+      <div
+        className="card-body cursor-pointer"
+        onClick={() => navigate(`/game/${data.slug}`)}
+      >
         <div className="d-flex justify-content-between mb-3">
           <div className="platforms">
             {data.platforms && data.platforms.map(mapPlatforms)}
